@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAW PAW</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Verdana, sans-serif;
+      background-color: #4c7049;
+      color: #3e3e2f;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      min-height: 100vh;
+      overflow-y: auto; /* Povolit scrollování */
+    }
+
+    header {
+      background-color: #4c7049;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4em;
+      color: #ffffff;
+      margin: 0 20px;
+      cursor: pointer;
+    }
+
+    .logo-header {
+      width: 120px;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      background-color: #4c7049;
+      padding: 30px 0;
+      width: 100%;
+    }
+
+    nav button {
+      background-color: #a4c6a2;
+      color: #3e3e2f;
+      border: none;
+      padding: 18px 30px;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #91b591;
+    }
+
+    section {
+      display: none;
+      background-color: #f5f5f5;
+      padding: 40px;
+      margin: 30px auto;
+      max-width: 1400px;
+      border-radius: 16px;
+      font-size: 1.1em;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #4c7049;
+      margin-bottom: 20px;
+    }
+
+    .gallery img,
+    .animal-img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      margin: 10px;
+    }
+
+    .action-img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .employee {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      justify-content: center;
+    }
+
+    .employee-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .gallery img,
+    .animal-img,
+    .shelter-img,
+    .employee-img,
+    .action-img {
+      border: 8px solid #6c9469;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .akce-flex {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .akce-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .akce-image {
+      flex: 1;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .action-img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo PAWPAW" class="logo-header" />
+    <h1 onclick="showHome()">PAW PAW</h1>
+    <img src="obrazky/logo.png" alt="Logo PAWPAW" class="logo-header" />
+  </header>
+
+  <nav>
+    <button onclick="showSection('onas')">O NÁS</button>
+    <button onclick="showSection('fotky')">FOTKY</button>
+    <button onclick="showSection('akce')">AKCE</button>
+    <button onclick="showSection('adopce')">ADOPCE</button>
+    <button onclick="showSection('kontakty')">KONTAKTY</button>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <img src="obrazky/utulek.png" alt="Útulek PAW PAW" class="shelter-img" />
+    <p>Vítejte na stránkách útulku PAW PAW. Pomáháme opuštěným zvířatům a hledáme jim nový domov!</p>
+  </section>
+
+  <!-- O nás -->
+  <section id="onas">
+    <h2>O nás</h2>
+    <p>Jsme bezpečným místem pro opuštěné, týrané a zatoulané psy a kočky. Každý den se snažíme zvířatům poskytnout péči, lásku a šanci na nový domov.</p>
+    <p>Navštivte nás a vyberte si nového chlupatého parťáka. Pomoci můžete i jako dobrovolník nebo darem. Děkujeme! 🐶🐱</p>
+    <img src="obrazky/pejsek.jpg" alt="Pejsek" class="shelter-img" />
+  </section>
+
+  <!-- Fotky -->
+  <section id="fotky">
+    <h2>Fotky našich svěřenců</h2>
+    <div class="gallery">
+      <img src="obrazky/misa.jpg" alt="Kočka Míša" />
+      <img src="obrazky/max.jpg" alt="Pes Max" />
+      <img src="obrazky/oliver.jpg" alt="Kočka Oliver" />
+    </div>
+  </section>
+
+  <!-- Akce -->
+  <section id="akce">
+    <h2>Dobrovolné venčení</h2>
+    <div class="akce-flex">
+      <div class="akce-text">
+        <p>Každý den od 8:00 do 16:00 máte možnost přijít a vzít naše pejsky na procházku. Vhodné pro každého nad 15 let (mladší s doprovodem dospělého).</p>
+        <ul>
+          <li>Vyberte si pejska na místě</li>
+          <li>Doporučujeme pohodlnou obuv</li>
+          <li>Pejsci milují pozornost i pohyb!</li>
+        </ul>
+      </div>
+      <div class="akce-image">
+        <img src="obrazky/akce.png" alt="Akce" class="action-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Adopce -->
+  <section id="adopce">
+    <h2>Naši svěřenci</h2>
+    <div>
+      <p>
+        🐱 <strong>Míša</strong> – Elegantní černá královna (2 roky, kastrovaná)<br>
+        <img src="obrazky/misa.jpg" alt="Kočka Míša" class="animal-img" />
+      </p>
+      <p>
+        🐶 <strong>Max</strong> – Aktivní a oddaný pes (3 roky, čipovaný)<br>
+        <img src="obrazky/max.jpg" alt="Pes Max" class="animal-img" />
+      </p>
+      <p>
+        🐱 <strong>Oliver</strong> – Roztomilý zrzavý uličník (1 rok, hravý)<br>
+        <img src="obrazky/oliver.jpg" alt="Kočka Oliver" class="animal-img" />
+      </p>
+    </div>
+    <p>Máte zájem o adopci? Zavolejte nám nebo nám napište na e-mail.</p>
+  </section>
+
+  <!-- Kontakty -->
+  <section id="kontakty">
+    <h2>Kontakty</h2>
+    <p>
+      📞 <strong>+420 723 831 012</strong><br>
+      📧 <strong>pawpaw@seznam.cz</strong><br>
+      📍 <strong>Průmyslová 713, 686 01 Uherské Hradiště</strong>
+    </p>
+    <div class="employee">
+      <img src="obrazky/jan.jpg" alt="Jan Novák" class="employee-img" />
+      <p><strong>Jan Novák</strong> – Ředitel útulku</p>
+    </div>
+    <div class="employee">
+      <img src="obrazky/anna.jpg" alt="Anna Nováková" class="employee-img" />
+      <p><strong>Anna Nováková</strong> – Koordinátorka adopcí</p>
+    </div>
+    <div class="employee">
+      <img src="obrazky/petr.jpg" alt="Petr Dvořák" class="employee-img" />
+      <p><strong>Petr Dvořák</strong> – Vychovatel psů</p>
+    </div>
+  </section>
+
+  <script>
+    // Funkce pro zobrazení vybrané sekce
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        section.classList.remove('active');
+      });
+      const activeSection = document.getElementById(sectionId);
+      activeSection.classList.add('active');
+    }
+
+    // Funkce pro zobrazení sekce Home (první sekce)
+    function showHome() {
+      showSection('home');
+    }
+  </script>
+</body>
+</html>
